@@ -300,13 +300,25 @@ dialog#cd::backdrop{background:rgba(27,18,20,.7)}
 .rec2 figcaption b{display:block}.rec2 figcaption span{font-size:13.5px;color:var(--mut)}
 .ap .ac .m{grid-template-columns:1fr;gap:12px}.ap .ac .m>div{display:flex;align-items:baseline;gap:12px}.ap .ac .m b{font-size:30px;min-width:0}.ap .ac .m span{margin:0}
 .li-img .badge{display:none}
+
+.pj{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.pj{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.pj{grid-template-columns:1fr}}
+.pj-c{border:1.5px solid var(--b);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.pj-c:nth-child(-n+2){background:var(--b);color:#fff}
+.pj-c:nth-child(-n+2) .pj-m{color:#E7A7B2}.pj-c:nth-child(-n+2) p,.pj-c:nth-child(-n+2) .pj-l{color:var(--pink)}
+.pj-m{font:600 11.5px "Inter Tight";letter-spacing:.1em;text-transform:uppercase;color:var(--b)}
+.pj-c h3{font:400 28px/1 Anton;text-transform:uppercase;margin:0}
+.pj-c p{margin:0;font-size:14.5px;color:var(--mut)}
+.pj-l{margin-top:auto;padding-top:10px;font-size:13.5px;font-weight:600;color:var(--b);text-decoration:none}
+a.pj-l:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
 <nav aria-label="Hlavní"><div class="w">
   <a class="logo" href="#top">Klára Davidová</a>
-  <ul><li><a href="#co-delam">Co dělám</a></li><li><a href="#kontexta">Kontexta</a></li><li><a href="#apertia">Apertia</a></li><li><a href="#praxe">Praxe</a></li></ul>
+  <ul><li><a href="#co-delam">Co dělám</a></li><li><a href="#kontexta">Kontexta</a></li><li><a href="#apertia">Apertia</a></li><li><a href="#praxe">Projekty</a></li></ul>
   <a class="btn" href="#kontakt">Napište mi ↗</a>
 </div></nav>
 
@@ -464,14 +476,18 @@ dialog#cd::backdrop{background:rgba(27,18,20,.7)}
 </div></section>
 
 <section class="s" id="praxe"><div class="w">
-  <div class="sh"><h2 class="D">Praxe</h2><p><a class="btn o" href="cv-klara-davidova.pdf" target="_blank" rel="noopener">Stáhnout životopis ↗</a></p></div>
-  <ol class="tl">
-    <li><span class="d">5/2026 – současnost</span><div><h3>Social Media Manager &amp; Content Specialist</h3><span class="co">Na volné noze · na dálku</span></div><p>E-shopy (správa FB a IG, produkce, focení a natáčení), newslettery pro agentury s open rate 35–44 %, Kontexta AI a reklamní grafika pro Meta Ads.</p></li>
-    <li><span class="d">2/2026 – 6/2026</span><div><h3>Sales Marketing Manager</h3><span class="co">PrávníBot.cz · skupina Apertia</span></div><p>Threads od nuly na 219K zobrazení, firemní LinkedIn +602 %, Instagram a TikTok, B2B newslettery.</p></li>
-    <li><span class="d">1/2025 – 6/2026</span><div><h3>Marketing &amp; PR Manager</h3><span class="co">Apertia.ai · ERP a CRM s AI agenty</span></div><p>Executive branding vedení, SEO tří webů, Meta a Google Ads, sociální sítě a 3 AI konference.</p></li>
-    <li><span class="d">7/2023 – 8/2024</span><div><h3>Marketingová a obchodní asistentka</h3><span class="co">ATOLLON</span></div><p>Průzkum trhu, segmentace a lead generation, správa CRM a podklady pro kampaně.</p></li>
-    <li><span class="d">10/2022 – 8/2023</span><div><h3>Social Media Specialist</h3><span class="co">Toys for Kids · na volné noze</span></div><p>Kompletní správa FB a IG, produkce obsahu, focení produktů a analýza výkonu.</p></li>
-  </ol>
+  <div class="sh"><h2 class="D">Projekty</h2><p>Firmy a projekty, na kterých jsem pracovala. <a class="btn o" href="cv-klara-davidova.pdf" target="_blank" rel="noopener" style="margin-top:12px">Stáhnout životopis ↗</a></p></div>
+  <div class="pj">
+    <article class="pj-c"><span class="pj-m">AI startup · 2026</span><h3>Kontexta AI</h3><p>Instagram, Threads, obsah a reklamy. Instagram z 242K na 1,47M zhlédnutí měsíčně, Threads od nuly, reklamy s ROAS 11,73.</p><a class="pj-l" href="https://kontexta.cz" target="_blank" rel="noopener">kontexta.cz ↗</a></article>
+    <article class="pj-c"><span class="pj-m">ERP a CRM s AI agenty · 2025–2026</span><h3>Apertia.ai</h3><p>Marketing a PR přes 13 kanálů, LinkedIn vedení firmy, kampaně, sociální sítě a 3 AI konference.</p><a class="pj-l" href="https://apertia.ai" target="_blank" rel="noopener">apertia.ai ↗</a></article>
+    <article class="pj-c"><span class="pj-m">AI pro kontrolu smluv · 2026</span><h3>PrávníBot.cz</h3><p>Threads od nuly na 219K zobrazení, firemní LinkedIn, Instagram, TikTok a B2B newslettery.</p><a class="pj-l" href="https://pravnibot.cz" target="_blank" rel="noopener">pravnibot.cz ↗</a></article>
+    <article class="pj-c"><span class="pj-m">Software pro firmy · 2025–2026</span><h3>AutoERP a AutoCRM</h3><p>Meta a Google Ads a SEO obsah webů. Cena za konverzi AutoCRM z 680 na 149 Kč.</p><a class="pj-l" href="https://autoerp.cz" target="_blank" rel="noopener">autoerp.cz · autocrm.cz ↗</a></article>
+    <article class="pj-c"><span class="pj-m">AI marketingový agent · 2026</span><h3>Draivix Pump</h3><p>Podílela jsem se na stavbě AI agenta, který plánuje kampaně, píše obsah a dělá SEO a GEO.</p><a class="pj-l" href="https://pump.draivix.com/" target="_blank" rel="noopener">pump.draivix.com ↗</a></article>
+    <article class="pj-c"><span class="pj-m">AI zpracování faktur · 2026</span><h3>Invoico</h3><p>S pomocí AI jsem navrhla vzhled webu, ze kterého vznikla jeho finální podoba.</p><a class="pj-l" href="https://invoico.cz/" target="_blank" rel="noopener">invoico.cz ↗</a></article>
+    <article class="pj-c"><span class="pj-m">od 5/2026</span><h3>E-shopy a agentury</h3><p>Správa Facebooku a Instagramu, focení a natáčení produktů a newslettery pro agentury s open rate 35–44 %.</p><span class="pj-l">na volné noze</span></article>
+    <article class="pj-c"><span class="pj-m">CRM platforma · 2023–2024</span><h3>ATOLLON</h3><p>Průzkum trhu, segmentace, lead generation, správa CRM a podklady pro call centrum.</p><span class="pj-l">marketing a obchod</span></article>
+    <article class="pj-c"><span class="pj-m">E-shop a kavárna · 2022–2023</span><h3>Toys for Kids a Kaldi Cafe</h3><p>Moje první projekty: správa sítí, focení produktů, obsah a kampaně na Metě.</p><span class="pj-l">sociální sítě</span></article>
+  </div>
   <div class="tools"><span>CapCut</span><span>Canva</span><span>Figma</span><span>Opus Clip</span><span>Meta Business Suite</span><span>Google Ads</span><span>Search Console</span><span>LinkedIn</span><span>ChatGPT</span><span>Claude</span><span>Midjourney</span><span>ElevenLabs</span><span>Atollon CRM</span><span>Čeština · angličtina</span></div>
   <div class="certs">
     <div class="cert e"><span class="t">Vzdělání</span><b>Marketingové komunikace</b><span>Univerzita Tomáše Bati ve Zlíně</span></div>
