@@ -316,6 +316,20 @@ a.pj-l:hover{text-decoration:underline}
 .pj-c:nth-child(-n+2) ul{color:var(--pink)}
 .pj-k{display:inline-block;align-self:flex-start;margin-top:8px;background:var(--soft);color:var(--b);border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:600}
 .pj-c:nth-child(-n+2) .pj-k{background:#fff}
+
+/* click hints */
+.phone,.post,.adi{position:relative;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+.phone:hover,.post:hover,.adi:hover{transform:translateY(-4px);box-shadow:0 18px 34px -18px rgba(84,12,25,.55)}
+.hint{position:absolute;top:10px;right:10px;z-index:3;background:var(--b);color:#fff;font:600 12px "Inter Tight";padding:5px 10px;border-radius:999px;box-shadow:0 4px 12px -4px rgba(0,0,0,.4);transition:transform .2s ease}
+.phone:hover .hint,.post:hover .hint,.adi:hover .hint{transform:scale(1.08)}
+.tap-demo>.phone:first-child::after{content:"";position:absolute;z-index:4;left:58%;top:58%;width:34px;height:34px;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 2l14 9-6.5 1.5L16 20l-2.6 1.3-3.5-7.6L5 18z' fill='%23fff' stroke='%231B1214' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;
+ animation:tapmove 3.2s ease-in-out infinite;pointer-events:none;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35))}
+.tap-demo>.phone:first-child::before{content:"";position:absolute;z-index:3;left:calc(58% - 6px);top:calc(58% - 6px);width:22px;height:22px;border-radius:50%;border:2px solid #fff;opacity:0;animation:tapring 3.2s ease-out infinite;pointer-events:none}
+@keyframes tapmove{0%{transform:translate(40px,50px);opacity:0}15%{opacity:1}45%{transform:translate(0,0)}52%{transform:translate(0,0) scale(.85)}60%{transform:translate(0,0) scale(1)}85%{opacity:1}100%{transform:translate(0,0);opacity:0}}
+@keyframes tapring{0%,50%{opacity:0;transform:scale(.4)}55%{opacity:1}80%{opacity:0;transform:scale(2.2)}100%{opacity:0}}
+.tap-demo:hover>.phone:first-child::after,.tap-demo:hover>.phone:first-child::before{display:none}
+@media (prefers-reduced-motion:reduce){.tap-demo>.phone:first-child::after,.tap-demo>.phone:first-child::before{display:none}.phone:hover,.post:hover,.adi:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -383,11 +397,11 @@ a.pj-l:hover{text-decoration:underline}
   <div class="blk"><div class="lab"><span>Video obsah</span><span>02</span></div>
     <div class="row">
       <div class="box"><p>Krátká videa táhla organický růst. <b>Vymýšlím hook, píšu scénář, natáčím a stříhám</b> s titulky a zvukem.</p><p>V UGC videích jsem před kamerou já.</p><div class="big">81 804</div><p style="margin:0">zhlédnutí nejlepšího videa</p></div>
-      <div class="phones">
-        <a class="phone" href="https://www.instagram.com/reel/Ddq_NiGMyOq/" target="_blank" rel="noopener" aria-label="UGC video na Instagramu"><img src="img/ig/Ddq_NiGMyOq.jpg" alt="UGC video: Zakázali vám AI?"><span class="play" aria-hidden="true">▶</span><span class="badge">UGC · 81 804 zhlédnutí</span></a>
-        <a class="phone" href="https://www.instagram.com/reel/DcEN676s_nb/" target="_blank" rel="noopener" aria-label="Video Naše první recenze na Instagramu"><img src="img/ig/DcEN676s_nb.jpg" alt="Video: Naše první recenze"><span class="play" aria-hidden="true">▶</span><span class="badge">20 622 zhlédnutí</span></a>
-        <a class="phone" href="https://www.instagram.com/reel/DcTHtfZsdvi/" target="_blank" rel="noopener" aria-label="Video Jak neriskovat u diplomky na Instagramu"><img src="img/ig/DcTHtfZsdvi.jpg" alt="Video: Jak neriskovat u diplomky"><span class="play" aria-hidden="true">▶</span><span class="badge">19 198 zhlédnutí</span></a>
-        <a class="phone" href="https://www.instagram.com/reel/Db81w4qRGHZ/" target="_blank" rel="noopener" aria-label="Video 3 weby na Instagramu"><img src="img/ig/Db81w4qRGHZ.jpg" alt="Video: 3 weby, které ti škola zatajila"><span class="play" aria-hidden="true">▶</span><span class="badge">22 285 zhlédnutí</span></a>
+      <div class="phones tap-demo">
+        <a class="phone" href="https://www.instagram.com/reel/Ddq_NiGMyOq/" target="_blank" rel="noopener" aria-label="UGC video na Instagramu"><span class="hint" aria-hidden="true">Přehrát ↗</span><img src="img/ig/Ddq_NiGMyOq.jpg" alt="UGC video: Zakázali vám AI?"><span class="play" aria-hidden="true">▶</span><span class="badge">UGC · 81 804 zhlédnutí</span></a>
+        <a class="phone" href="https://www.instagram.com/reel/DcEN676s_nb/" target="_blank" rel="noopener" aria-label="Video Naše první recenze na Instagramu"><span class="hint" aria-hidden="true">Přehrát ↗</span><img src="img/ig/DcEN676s_nb.jpg" alt="Video: Naše první recenze"><span class="play" aria-hidden="true">▶</span><span class="badge">20 622 zhlédnutí</span></a>
+        <a class="phone" href="https://www.instagram.com/reel/DcTHtfZsdvi/" target="_blank" rel="noopener" aria-label="Video Jak neriskovat u diplomky na Instagramu"><span class="hint" aria-hidden="true">Přehrát ↗</span><img src="img/ig/DcTHtfZsdvi.jpg" alt="Video: Jak neriskovat u diplomky"><span class="play" aria-hidden="true">▶</span><span class="badge">19 198 zhlédnutí</span></a>
+        <a class="phone" href="https://www.instagram.com/reel/Db81w4qRGHZ/" target="_blank" rel="noopener" aria-label="Video 3 weby na Instagramu"><span class="hint" aria-hidden="true">Přehrát ↗</span><img src="img/ig/Db81w4qRGHZ.jpg" alt="Video: 3 weby, které ti škola zatajila"><span class="play" aria-hidden="true">▶</span><span class="badge">22 285 zhlédnutí</span></a>
       </div>
     </div>
   </div>
@@ -398,10 +412,10 @@ a.pj-l:hover{text-decoration:underline}
       <div class="box"><p>Edukační posty, srovnání a meme formáty, které vysvětlí produkt <b>bez dlouhého čtení</b>.</p><p>Koncept, copy i grafiku navrhuji sama v Canvě.</p></div>
       <div class="frame">
         <div class="g3 g4k">
-          <a class="post" href="https://www.instagram.com/p/Dc3fSdYEeJt/" target="_blank" rel="noopener"><img src="img/ig/Dc3fSdYEeJt.jpg" alt="Grafika Zdroj vs. vymyšlený zdroj"><span class="badge">1 695 zhlédnutí</span></a>
-          <a class="post" href="https://www.instagram.com/p/DeQ5RBMEYMx/" target="_blank" rel="noopener"><img src="img/ig/DeQ5RBMEYMx.jpg" alt="Grafika Platíš litr měsíčně za AI"><span class="badge">2 070 zhlédnutí</span></a>
-          <a class="post" href="https://www.instagram.com/p/De4dPwTuvv_/" target="_blank" rel="noopener"><img src="img/ig/De4dPwTuvv_.jpg" alt="Grafika Tohle všechno umí Kontexta"><span class="badge">779 zhlédnutí</span></a>
-          <a class="post" href="https://www.instagram.com/p/DakyRfUEUe8/" target="_blank" rel="noopener"><img src="img/ig/DakyRfUEUe8.jpg" alt="Post Quick review Kontexty"><span class="badge">377 zhlédnutí</span></a>
+          <a class="post" href="https://www.instagram.com/p/Dc3fSdYEeJt/" target="_blank" rel="noopener"><span class="hint" aria-hidden="true">Otevřít ↗</span><img src="img/ig/Dc3fSdYEeJt.jpg" alt="Grafika Zdroj vs. vymyšlený zdroj"><span class="badge">1 695 zhlédnutí</span></a>
+          <a class="post" href="https://www.instagram.com/p/DeQ5RBMEYMx/" target="_blank" rel="noopener"><span class="hint" aria-hidden="true">Otevřít ↗</span><img src="img/ig/DeQ5RBMEYMx.jpg" alt="Grafika Platíš litr měsíčně za AI"><span class="badge">2 070 zhlédnutí</span></a>
+          <a class="post" href="https://www.instagram.com/p/De4dPwTuvv_/" target="_blank" rel="noopener"><span class="hint" aria-hidden="true">Otevřít ↗</span><img src="img/ig/De4dPwTuvv_.jpg" alt="Grafika Tohle všechno umí Kontexta"><span class="badge">779 zhlédnutí</span></a>
+          <a class="post" href="https://www.instagram.com/p/DakyRfUEUe8/" target="_blank" rel="noopener"><span class="hint" aria-hidden="true">Otevřít ↗</span><img src="img/ig/DakyRfUEUe8.jpg" alt="Post Quick review Kontexty"><span class="badge">377 zhlédnutí</span></a>
         </div>
       </div>
     </div>
@@ -411,10 +425,10 @@ a.pj-l:hover{text-decoration:underline}
     <div class="row">
       <div class="box"><p>Reklamní vizuály pro Facebook a Instagram. Memy, srovnání a „screenshot“ formáty, které <b>nepůsobí jako reklama</b>.</p><p>Nápad, copy i grafika ode mě.</p></div>
       <div class="frame"><div class="g4">
-        <button type="button" class="adi" data-cert="img/ads/ad-bankovni-ucet.jpg" data-t="Reklama: Můj bankovní účet"><img src="img/ads/ad-bankovni-ucet.jpg" alt="Reklamní vizuál Můj bankovní účet"></button>
-        <button type="button" class="adi" data-cert="img/ads/ad-konverzace.jpg" data-t="Reklama: Average konverzace s AI"><img src="img/ads/ad-konverzace.jpg" alt="Reklamní vizuál Average konverzace s AI"></button>
-        <button type="button" class="adi" data-cert="img/ads/ad-mas-problem.jpg" data-t="Reklama: Máš problém?"><img src="img/ads/ad-mas-problem.jpg" alt="Reklamní vizuál Máš problém"></button>
-        <button type="button" class="adi" data-cert="img/ads/ad-chatgpt.jpg" data-t="Reklama: ChatGPT 5.1"><img src="img/ads/ad-chatgpt.jpg" alt="Reklamní vizuál ChatGPT"></button>
+        <button type="button" class="adi" data-cert="img/ads/ad-bankovni-ucet.jpg" data-t="Reklama: Můj bankovní účet"><span class="hint" aria-hidden="true">Zvětšit ⤢</span><img src="img/ads/ad-bankovni-ucet.jpg" alt="Reklamní vizuál Můj bankovní účet"></button>
+        <button type="button" class="adi" data-cert="img/ads/ad-konverzace.jpg" data-t="Reklama: Average konverzace s AI"><span class="hint" aria-hidden="true">Zvětšit ⤢</span><img src="img/ads/ad-konverzace.jpg" alt="Reklamní vizuál Average konverzace s AI"></button>
+        <button type="button" class="adi" data-cert="img/ads/ad-mas-problem.jpg" data-t="Reklama: Máš problém?"><span class="hint" aria-hidden="true">Zvětšit ⤢</span><img src="img/ads/ad-mas-problem.jpg" alt="Reklamní vizuál Máš problém"></button>
+        <button type="button" class="adi" data-cert="img/ads/ad-chatgpt.jpg" data-t="Reklama: ChatGPT 5.1"><span class="hint" aria-hidden="true">Zvětšit ⤢</span><img src="img/ads/ad-chatgpt.jpg" alt="Reklamní vizuál ChatGPT"></button>
       </div></div>
     </div>
         <div class="ads">
@@ -430,9 +444,9 @@ a.pj-l:hover{text-decoration:underline}
   <div class="sh"><h2 class="D">Apertia</h2><p>Marketing a PR české AI skupiny napříč 13 kanály: LinkedIn vedení, kampaně, SEO tří webů, sociální sítě a AI konference.</p></div>
   <div class="blk"><div class="lab"><span>Grafika</span><span>01</span></div>
     <div class="frame"><div class="g3">
-      <a class="post" href="https://www.instagram.com/p/DW0xz5oCiyp/" target="_blank" rel="noopener"><img src="img/ads/ap-automatizace.jpg" alt="Karusel AutoERP Jak marketingová automatizace funguje"><span class="badge">Karusel AutoERP</span></a>
-      <a class="post" href="https://www.instagram.com/p/DNp5nfmt_bI/" target="_blank" rel="noopener"><img src="img/ads/ap-8ai.jpg" alt="Grafika 8 AI modulů"><span class="badge">Grafika Apertia</span></a>
-      <a class="post" href="https://www.instagram.com/p/DGnN2BYBXeA/" target="_blank" rel="noopener"><img src="img/ads/ap-fefo.jpg" alt="Případovka FEFO skladový systém"><span class="badge">Případovka</span></a>
+      <a class="post" href="https://www.instagram.com/p/DW0xz5oCiyp/" target="_blank" rel="noopener"><span class="hint" aria-hidden="true">Otevřít ↗</span><img src="img/ads/ap-automatizace.jpg" alt="Karusel AutoERP Jak marketingová automatizace funguje"><span class="badge">Karusel AutoERP</span></a>
+      <a class="post" href="https://www.instagram.com/p/DNp5nfmt_bI/" target="_blank" rel="noopener"><span class="hint" aria-hidden="true">Otevřít ↗</span><img src="img/ads/ap-8ai.jpg" alt="Grafika 8 AI modulů"><span class="badge">Grafika Apertia</span></a>
+      <a class="post" href="https://www.instagram.com/p/DGnN2BYBXeA/" target="_blank" rel="noopener"><span class="hint" aria-hidden="true">Otevřít ↗</span><img src="img/ads/ap-fefo.jpg" alt="Případovka FEFO skladový systém"><span class="badge">Případovka</span></a>
     </div></div>
   </div>
   <div class="blk"><div class="lab"><span>Výsledky</span><span>02</span></div>
